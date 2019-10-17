@@ -9,8 +9,8 @@ publish_x64:
   before_script:
     - echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
   script:
-    - docker build --pull -f Dockerfile_x64 -t zella/TorrServer-linux-amd64:$VERSION -t zella/TorrServer-linux-amd64:latest .
-    - docker push zella/TorrServer-linux-amd64
+    - docker build --pull -f Dockerfile_x64 -t zella/torrserver-linux-amd64:$VERSION -t zella/torrserver-linux-amd64:latest .
+    - docker push zella/torrserver-linux-amd64
   only:
     - master
 
@@ -22,7 +22,7 @@ publish_arm32v7:
   before_script:
     - echo $DOCKER_PWD | docker login -u $DOCKER_LOGIN --password-stdin
   script:
-    - docker build --pull -f Dockerfile_arm32v7 -t zella/TorrServer-linux-arm7:$VERSION -t zella/TorrServer-linux-arm7:latest .
-    - docker push zella/TorrServer-linux-arm7
+    - docker build --pull -f Dockerfile_arm32v7 -t zella/torrserver-linux-arm7:$VERSION -t zella/torrserver-linux-arm7:latest .
+    - docker push zella/torrserver-linux-arm7
   only:
     - master
