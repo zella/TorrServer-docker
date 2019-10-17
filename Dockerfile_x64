@@ -1,7 +1,9 @@
 FROM ubuntu
 MAINTAINER zella
 
-ENV DOWNLOAD_LINK=https://github.com/YouROK/TorrServer/releases/download/1.1.70/TorrServer-linux-amd64
+ENV VERSION
+
+ENV DOWNLOAD_LINK=https://github.com/YouROK/TorrServer/releases/download/$VERSION/TorrServer-linux-amd64
 
 RUN apt-get update && apt-get install -y wget && \
     mkdir /torrserver/ && cd /torrserver/ && mkdir /db && \

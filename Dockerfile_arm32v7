@@ -1,7 +1,9 @@
 FROM arm32v7/ubuntu
 MAINTAINER zella
 
-ENV DOWNLOAD_LINK=https://github.com/YouROK/TorrServer/releases/download/1.1.75/TorrServer-linux-arm7
+ENV VERSION
+
+ENV DOWNLOAD_LINK=https://github.com/YouROK/TorrServer/releases/download/$VERSION/TorrServer-linux-arm7
 
 #building arm on x86
 COPY qemu-arm-static /usr/bin
