@@ -1,7 +1,7 @@
 FROM arm32v7/ubuntu
 MAINTAINER zella
 
-ENV VERSION
+ARG VERSION
 
 ENV DOWNLOAD_LINK=https://github.com/YouROK/TorrServer/releases/download/$VERSION/TorrServer-linux-arm7
 
