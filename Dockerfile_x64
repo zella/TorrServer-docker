@@ -1,0 +1,14 @@
+FROM ubuntu
+MAINTAINER zella
+
+ENV DOWNLOAD_LINK=https://github.com/YouROK/TorrServer/releases/download/1.1.70/TorrServer-linux-amd64
+
+RUN apt-get update && apt-get install -y wget && \
+    mkdir /torrserver/ && cd /torrserver/ && mkdir /db && \
+    wget -O TorrServer -P /torrserver/ "$DOWNLOAD_LINK" && \
+    chmod +x /torrserver/TorrServer
+
+EXPOSE 8090:8090
+
+ENTRYPOINT ["/torrserver/TorrServer"]
+CMD ["--path", "/torrserver/db"]
