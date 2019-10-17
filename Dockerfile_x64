@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:19.04
 MAINTAINER zella
 
 ARG VERSION
