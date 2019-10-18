@@ -5,12 +5,14 @@ ARG VERSION
 
 ENV DOWNLOAD_LINK=https://github.com/YouROK/TorrServer/releases/download/$VERSION/TorrServer-linux-amd64
 
+WORKDIR /torrserver
+
 RUN apt-get update && apt-get install -y wget && \
-    mkdir /torrserver/ && cd /torrserver/ && mkdir /db && \
-    wget -O TorrServer -P /torrserver/ "$DOWNLOAD_LINK" && \
+    mkdir db && \
+    wget --no-check-certificate -O TorrServer -P /torrserver "$DOWNLOAD_LINK" && \
     chmod +x /torrserver/TorrServer
 
-EXPOSE 8090:8090
+EXPOSE 8090
 
 ENTRYPOINT ["/torrserver/TorrServer"]
 CMD ["--path", "/torrserver/db"]

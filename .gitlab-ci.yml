@@ -1,3 +1,6 @@
+variables:
+  VERSION: "1.1.75"
+
 stages:
   - publish
 
