@@ -9,6 +9,8 @@ ENV DOWNLOAD_LINK=https://github.com/YouROK/TorrServer/releases/download/$VERSIO
 COPY qemu-arm-static /usr/bin
 RUN chmod +x /usr/bin/qemu-arm-static
 
+WORKDIR /torrserver
+
 RUN apt-get update && apt-get install -y wget && \
     mkdir db && \
     wget --no-check-certificate -O TorrServer -P /torrserver "$DOWNLOAD_LINK" && \
